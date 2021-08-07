@@ -24,5 +24,18 @@
 //console.log(validator.isEmail('foo@bar.com'));
 //console.log(validator.isURL('asdadfoo@b'));
 
-const chalk = require('chalk');
-console.log(chalk.bold.green.inverse('Success'));
+// const chalk = require('chalk');
+// console.log(chalk.bold.green.inverse('Success'));
+
+//Pass arguments from command line
+//node app.js Aniket
+//node app.js add --title="THis is my title"
+
+//console.log(process.argv)
+const command = process.argv[2]
+//console.log(process.argv)
+if(command === 'add') {
+  console.log('Adding notes')
+}else if(command === 'remove') {
+    console.log("removing notes")
+}
