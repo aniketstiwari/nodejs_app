@@ -56,8 +56,22 @@ yargs.version('1.1.0')
 yargs.command({
     command: 'add',
     describe: 'Add a new note',
-    handler: function() {
-        console.log("adding a new note")
+    builder: {
+        title: {
+            describe: 'note title',// this is basically a description which won't be printed
+            demandOption: true, //this property basically expects a title
+            type: 'string' // Specifies which type of datatype it support
+        },
+        body: {
+            describe: 'note description',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: function(argv) {
+        //console.log("adding a new note", argv)
+        console.log('Title: ' + argv.title)
+        console.log('Body: ' + argv.body)
     }
 })
 
@@ -93,4 +107,6 @@ yargs.command({
     }  
 })
 
-console.log(yargs.argv)
+//console.log(yargs.argv)
+//or
+yargs.parse()
