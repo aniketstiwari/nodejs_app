@@ -19,7 +19,10 @@
 
 // console.log(getNotes())
 
-const validator = require('validator')
+//const validator = require('validator')
 
 //console.log(validator.isEmail('foo@bar.com'));
-console.log(validator.isURL('asdadfoo@b'));
+//console.log(validator.isURL('asdadfoo@b'));
+
+const chalk = require('chalk');
+console.log(chalk.bold.green.inverse('Success'));
