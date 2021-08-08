@@ -1,5 +1,6 @@
 const chalk = require('chalk')
 const yargs = require('yargs')
+const notes = require('./notes.js')
 
 //const fs = require('fs')
 
@@ -17,8 +18,6 @@ const yargs = require('yargs')
 
 // const sum = add(4,-2);
 // console.log(sum);
-
-// const getNotes = require('./notes.js')
 
 // console.log(getNotes())
 
@@ -70,8 +69,9 @@ yargs.command({
     },
     handler: function(argv) {
         //console.log("adding a new note", argv)
-        console.log('Title: ' + argv.title)
-        console.log('Body: ' + argv.body)
+        // console.log('Title: ' + argv.title)
+        // console.log('Body: ' + argv.body)
+        notes.addNote(argv.title, argv.body)
     }
 })
 
